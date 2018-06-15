@@ -1,0 +1,16 @@
+---
+- name: Create Azure Resources
+  hosts: localhost
+  connection: local
+  gather_facts: true
+  
+  roles:
+    - naming_convention
+    - resource_group
+    # - virtual_network
+    # - virtual_subnet
+    # - public_ip_address
+    # - network_security_group
+    # - network_interface_card
+    # - virtual_machine
+...

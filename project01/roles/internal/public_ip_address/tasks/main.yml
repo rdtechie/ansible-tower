@@ -1,0 +1,15 @@
+---
+- name: Create Public IP Address
+  azure_rm_publicipaddress:
+    profile: '{{ subscription_profile_name }}'
+    resource_group: "{{ resource_group_name }}"
+    allocation_method: Dynamic
+    name: "{{ public_ip_address_name }}"
+    domain_name_label: "test{{ vm_name }}"
+    tags:
+      BusinessUnitName: "{{ tag_business_unit_name }}"
+      ApplicationName: "{{ tag_application_name }}"
+      ApplicationId: "{{ tag_application_id }}"
+      EnvironmentId: "{{ tag_environment_id }}"
+      Owner: "{{ tag_owner }}"
+...

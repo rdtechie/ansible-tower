@@ -1,0 +1,28 @@
+---
+- name: Get facts for one resource group
+  hosts: localhost
+  connection: local
+
+  roles:
+    - Azure.azure_preview_modules
+
+  tasks:
+    # - name: Get Virtual Machine Facts
+    #   azure_rm_resource_facts:
+    #     profile: playground
+    #     resource_group: WeEu-S03-Tst-Rsg-RDI
+    #     provider: compute
+    #     resource_type: Microsoft
+    #     resource_name: weeus03tstlrdi
+    #     api_version: "2017-12-01"
+    #   register: output
+
+  #- debug: var=output
+
+  - name: Get Resource Group Facts
+    azure_rm_resourcegroup_facts:
+      profile: playground
+      name: WeEu-S03-Tst-Rsg-RDI
+    register: output
+
+  - debug: var=output.ansible_facts.azure_resourcegroups[0].name

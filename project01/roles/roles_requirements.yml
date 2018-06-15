@@ -1,0 +1,5 @@
+---
+  - src: Azure.azure_preview_modules
+  - src: HarryHarcourt.Ansible-RHEL7-CIS-Benchmarks
+  - src: geerlingguy.nginx
+...

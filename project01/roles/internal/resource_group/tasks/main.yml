@@ -1,0 +1,14 @@
+---
+- name: Azure Resource Group (De)commissioning
+  azure_rm_resourcegroup:
+    state: "{{ resource_group_state }}"
+    profile: "{{ subscription_profile_name }}"
+    name: "{{ resource_group_name }}"
+    location: "{{ resource_group_location }}"
+    tags:
+      BusinessUnitName: "{{ tag_business_unit_name }}"
+      ApplicationName: "{{ tag_application_name }}"
+      ApplicationId: "{{ tag_application_id }}"
+      EnvironmentId: "{{ tag_environment_id }}"
+      Owner: "{{ tag_owner }}"
+...

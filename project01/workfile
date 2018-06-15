@@ -1,0 +1,3 @@
+source ~/ansible/venv1/bin/activate
+cd ~/ansible/ACF/deployment/ansible/azure/plays
+ansible-playbook -i ../test.ini test.yml

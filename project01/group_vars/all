@@ -1,0 +1,32 @@
+---
+ahit_location_id: WeEu
+ahit_subscription_id: S01
+ahit_environment_id: Prd
+ahit_description: BITB
+ahit_vm_os_type: l
+ahit_location: westeurope
+subscription_profile_name: generic_infra
+tag_business_unit_name: Ahold
+tag_application_name: Bitbucket
+tag_application_id: ''
+tag_environment_id: Production
+tag_owner: Richard Diphoorn
+resource_group_state: present
+resource_group_location: westeurope
+virtual_network_address_prefix: 10.0.0.0/16
+virtual_subnet_address_prefix: 10.232.0.80/28
+vm_admin_username: vmadmin
+vm_admin_password: Welcome@Ahold2018!
+vm_size: Standard_D2s_v3
+vm_managed_disk_type: Premium_LRS
+vm_ssh_password_enabled: false
+vm_ssh_public_key: >-
+  ssh-rsa
+  AAAAB3NzaC1yc2EAAAADAQABAAABAQC56gy+NUkzpqcHssWDkpDq+IarAurqqHmfNeQh2cBuSwHBIijC7nLEL8wAsw0HZiaG299ldc6YEDqcXEF4kw/MHMNQbAnPMF6p0j3yb85yCSrMsoU6xWyokVjVOw3pwOg+a+Gv4HjeLufouqODAN7MI+27zmPvO7Mq6xR19Z9Nyix/pYlFTBWIUjDaGreL0as1PxKH6uU/2Jrqgfo15tuAntKPL4p1d6CdML8fav28WqT0/PW49iX4zlemkFbF4JIXCTVT15rtrlNCrL+aD5UvhgjJlRaxyXm3H84OsLz+ppSAl8WFu7m/pVkRJ0HEY2Wb4jHj4XNRcQ6rSknNuGLl
+  vmadmin@weeus03tndlrdi1
+vm_count: 1
+vm_publisher: RedHat
+vm_offer: RHEL
+vm_sku: 7-RAW
+vm_sku_version: latest
+...
