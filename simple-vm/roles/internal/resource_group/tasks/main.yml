@@ -1,8 +1,14 @@
 ---
-- name: Azure Resource Group (De)commissioning
+- name: Setting Resource Group Location to West Europe
+  set_fact: resource_group_location=westeurope
+  when: ahit_location_id == "WeEu"
+
+- name: Setting Resource Group Location to West Europe
+  set_fact: resource_group_location=northeurope
+  when: ahit_location_id == "NoEu"
+
+- name: Create Azure Resource Group
   azure_rm_resourcegroup:
-    #state: "{{ resource_group_state }}"
-    #profile: "{{ subscription_profile_name }}"
     name: "{{ resource_group_name }}"
     location: "{{ resource_group_location }}"
     # tags:
