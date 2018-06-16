@@ -1,0 +1,5 @@
+- name: test
+  hosts: localhost
+  roles:
+    - naming_convention
+    - resource_group

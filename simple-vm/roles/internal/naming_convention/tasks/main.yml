@@ -1,0 +1,62 @@
+---
+- name: Set Resource Group Name
+  set_fact: resource_group_name={{ ahit_location_id }}-{{ ahit_subscription_id }}-{{ ahit_environment_id }}-Rsg-{{ ahit_description }}-01
+
+- name: Print Resource Group Name
+  debug: 
+    msg: "Resource Group Name is {{ resource_group_name }}"
+    verbosity: 1
+
+- name: Set Virtual Network Name
+  set_fact: virtual_network_name={{ ahit_location_id }}-{{ ahit_subscription_id }}-{{ ahit_environment_id }}-Vnet-{{ ahit_description }}-01
+  
+- name: Print Virtual Network Name
+  debug: 
+    msg: "Virtual Network Name is {{ virtual_network_name }}"
+    verbosity: 1
+
+- name: Set Virtual Subnet Name
+  set_fact: virtual_subnet_name={{ ahit_location_id }}-{{ ahit_subscription_id }}-{{ ahit_environment_id }}-Snt-{{ ahit_description }}-01
+
+- name: Print Virtual Subnet Name
+  debug: 
+    msg: "Virtual Subnettwork Name is {{ virtual_subnet_name }}"
+    verbosity: 1
+  
+- name: Set Public IP Address Name  
+  set_fact: public_ip_address_name={{ ahit_location_id }}-{{ ahit_subscription_id }}-{{ ahit_environment_id }}-Pip-{{ ahit_description }}-01
+
+- name: Print Public IP Address Name
+  debug: 
+    msg: "Public IP Address Name is {{ public_ip_address_name }}"
+    verbosity: 1
+
+- name: Set Network Security Group Name  
+  set_fact: network_security_group_name={{ ahit_location_id }}-{{ ahit_subscription_id }}-{{ ahit_environment_id }}-Nsg-{{ ahit_description }}-01
+  
+- name: Print Network Security Group Name
+  debug: 
+    msg: "Network Security Group Name is {{ public_ip_address_name }}"
+    verbosity: 1
+
+- name: Set Network Interface Name  
+  set_fact: network_interface_name={{ ahit_location_id }}-{{ ahit_subscription_id }}-{{ ahit_environment_id }}-Nic-{{ ahit_description }}-01
+
+- name: Print Network Interface Name
+  debug: 
+    msg: "Network Interface Name is {{ public_ip_address_name }}"
+    verbosity: 1
+
+- name: Setting Virtual Machine Name Variable to Linux Specific
+  set_fact: vm_name={{ ahit_location_id|lower }}{{ ahit_subscription_id|lower }}{{ ahit_environment_id|lower }}l{{ ahit_description|lower }}01
+  when: ahit_vm_os_type == "l"
+
+- name: Setting Virtual Machine Name Variable to Windows Specific
+  set_fact: vm_name={{ ahit_location_id|lower }}{{ ahit_subscription_id|lower }}{{ ahit_environment_id|lower }}w{{ ahit_description|lower }}01
+  when: ahit_vm_os_type == "w"
+
+- name: Print Virtual Machine Name
+  debug: 
+    msg: "Virtual Machine Name is {{vm_name}}"
+    verbosity: 1
+...

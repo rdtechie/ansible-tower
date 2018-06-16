@@ -1,0 +1,4 @@
+---
+dependencies: 
+  - {role: Azure.azure_preview_modules}
+...

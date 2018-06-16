@@ -1,0 +1,20 @@
+---
+- name: Create Network Security group
+  azure_rm_securitygroup:
+    profile: '{{ subscription_profile_name }}'
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ network_security_group_name }}"
+    rules:
+      - name: SSH
+        protocol: Tcp
+        destination_port_range: 22
+        access: Allow
+        priority: 1001
+        direction: Inbound
+    tags:
+      BusinessUnitName: "{{ tag_business_unit_name }}"
+      ApplicationName: "{{ tag_application_name }}"
+      ApplicationId: "{{ tag_application_id }}"
+      EnvironmentId: "{{ tag_environment_id }}"
+      Owner: "{{ tag_owner }}"
+...
