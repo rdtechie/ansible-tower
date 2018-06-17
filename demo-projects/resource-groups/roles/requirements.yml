@@ -1,0 +1,6 @@
+---
+  - src: Azure.azure_preview_modules
+  - src: HarryHarcourt.Ansible-RHEL7-CIS-Benchmarks
+  - src: rdtechie.az_create_resource_group
+  - src: rdtechie.az_delete_resource_group
+...

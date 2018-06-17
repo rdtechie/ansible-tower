@@ -1,4 +1,5 @@
 - name: test
+  connection: local
   hosts: localhost
   roles:
     - naming_convention

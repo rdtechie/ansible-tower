@@ -1,0 +1,15 @@
+# With the sequence plugin you can generate a sequence of items. A simple example is to generate server names with an increment like
+# server-01, server-02, server-03, etc.
+# Documentation URL: https://docs.ansible.com/ansible/latest/plugins/lookup/sequence.html
+- name: test
+  hosts: localhost
+  vars:
+    tags:
+      Owner: Homer Simpson
+      Project: Springfield
+      Description: Nuclear Plant
+  tasks:
+    - name: List Loop Example
+      debug:
+        msg: "{{ item.key }}: {{ item.value }}"
+      with_dict: "{{ tags }}"
